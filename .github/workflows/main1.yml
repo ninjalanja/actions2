@@ -6,14 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Greet user
-      run: |
-        curl \
-          -X POST \
-          -H "Authorization: token ${{ secrets.MY_TOKEN }}" \
-          -H "Accept: application/vnd.github+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
-          -d '{"body":"Hello"}'
-
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Greet user
+        run: |
+          curl \
+            -X POST \
+            -H "Authorization: token ${{ secrets.MY_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
+            -d '{"body":"![Image](https://th.bing.com/th/id/OIP.ETBFnyjhSomVbs7bnKzRDAHaKm?pid=ImgDet&rs=1)"}'

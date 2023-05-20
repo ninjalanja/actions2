@@ -15,4 +15,4 @@ jobs:
             -H "Authorization: token ${{ secrets.MY_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
-            -d '{"body":"Hello!\\nThanks for opening an issue.\\n\\n![Image](https://i.redd.it/wf2pdan4rbk41.png)"}'
+            -d '{"body":"Hello!\\\nThanks for opening an issue.\\n\\n![Image](https://i.redd.it/wf2pdan4rbk41.png)"}'
